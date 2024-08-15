@@ -1,11 +1,28 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { Badge } from "reactstrap";
 
-export default class ProductList extends Component {
+class ProductList extends Component {
   render() {
     return (
       <div>
-        <h1>Products</h1>
+        <h3>
+          <Badge color="warning">
+            Products
+          </Badge>
+          <Badge color="success">
+            {this.props.currentCategory.categoryName}
+          </Badge>
+        </h3>
       </div>
-    )
+    );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    currentCategory: state.changeCategoryReducer,
+  };
+}
+
+export default connect(mapStateToProps)(ProductList);
