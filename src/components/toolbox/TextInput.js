@@ -5,9 +5,10 @@ const TextInput = ({ name, label, onChange, placeHolder, value, error }) => {
   if (error && error.length > 0) {
     wrapperClass += " has-error";
   }
+
   return (
     <div className={wrapperClass}>
-      <label htmlFor={name}></label>
+      <label htmlFor={name}>{label}</label>
       <div className="field">
         <input
           type="text"

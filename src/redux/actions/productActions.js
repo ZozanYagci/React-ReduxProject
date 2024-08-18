@@ -25,12 +25,12 @@ export function saveProductApi(product) {
 export function saveProduct(product) {
   return function (dispatch) {
     return saveProductApi(product)
-      .then((savedProduct) => {
+      .then(savedProduct => {
         product.id
           ? dispatch(updateProductSuccess(savedProduct))
           : dispatch(createProductSuccess(savedProduct));
       })
-      .catch((error) => {
+      .catch(error => {
         throw error;
       });
   };

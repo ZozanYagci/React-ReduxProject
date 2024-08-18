@@ -5,6 +5,7 @@ import Dashboard from "./Dashboard";
 import CartDetail from "../cart/CartDetail";
 import { Route, Routes } from "react-router-dom";
 import AddOrUpdateProduct from "../products/AddOrUpdateProduct";
+import NotFound from "../common/NotFound";
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
         <Route path="/" element={<Dashboard/>} />
         <Route path="/product" element={<Dashboard/>} />
         <Route path="/saveproduct/:productId" element={<AddOrUpdateProduct/>} />
+        <Route path="/saveproduct" element={<AddOrUpdateProduct/>} />
         <Route path="/cart" element={<CartDetail/>} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Container>
   );
